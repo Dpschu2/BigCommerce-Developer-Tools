@@ -1,0 +1,4 @@
+1. right click bookmarks bar
+2. add page
+3. replace url with the following:
+javascript: (() => { const entries = document.querySelectorAll('#jsonFormatterParsed > .entry > .blockInner > .entry > .k'); let props = []; entries.forEach((entry, ind) => props.push(`[${entry.textContent}]`)); const property = prompt(`Lookup property: (press <enter> to collapse all)\n\n${props.join('  ')}`); entries.forEach((entry, ind) => { if (property == '') { entry.parentElement.classList.add('collapsed'); } else if (property) { if (entry.textContent == property) { entry.parentElement.classList.remove('collapsed'); const innerObjects = entry.parentElement.querySelectorAll('& > .blockInner > .entry'); if (innerObjects) { innerObjects.forEach((obj, ind) => { if (obj.querySelector('& > .blockInner')) { obj.classList.add('collapsed'); } }); } entry.scrollIntoView(); } else { entry.parentElement.classList.add('collapsed'); } } }); })()
