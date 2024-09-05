@@ -6,7 +6,7 @@ BC_themes_quick_link.js: Requires 'ScriptAutoRunner' chrome extension
 
       Moves 'Change Store' button fixed to bottom of sidebar
 
-![change store button](image.png)
+![change store button](change-store.png)
       
       Removes that pesky admin bar
       
