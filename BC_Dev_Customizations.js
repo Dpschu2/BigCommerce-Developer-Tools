@@ -2,17 +2,16 @@
 Author: Dean Schulz
 Installation: 
     1. Install ScriptAutoRunner Chrome Extension
-    2. Add the following script
+    2. Add the following script and enable
 Features:
     -Adds Themes quick link to sidebar
+    -Moves 'change store' button to bottom of sidebar
     -Collapses front end admin bar by default
     -siteNotes - Adds custom info message to themes page 
 */
-
 const siteNotes = {
-    '6g3rgg': 'Clear cache through Section.io after pushing theme live'
+    '6gf5gg': 'Clear cache through Section.io after pushing theme live'
 };
-
 const waitForEl = function (selector, callback) {
     let inter = setInterval(() => {
         if (document.querySelector(selector) != null) {
@@ -29,10 +28,8 @@ if (scriptAutoUrl.includes('ctk=')) {
     });
 }
 //Remove shopify front end admin bar
-if (scriptAutoUrl.includes('-dev.myshopify.com')) {
-    waitForEl('#preview-bar-iframe', () => {
-        document.querySelector('#preview-bar-iframe').remove();
-    });
+if (document.querySelector('#admin-bar-iframe')) {
+    document.querySelector('#admin-bar-iframe').remove();
 }
 //Themes Quicklink
 if (scriptAutoUrl.includes('.mybigcommerce.com/manage')) {
@@ -51,9 +48,17 @@ if (scriptAutoUrl.includes('.mybigcommerce.com/manage')) {
                     </div>
                     <span>Themes</span>
                 </a>
-                <a style="position: absolute;right: 16px;top: 10px;" href='${link}' target="_blank" class="floating-icon"><svg fill="currentColor" aria-labelledby=":rp:" height="24" stroke="currentColor" stroke-width="0" viewBox="0 0 24 24" width="24" class="base__StyledIcon-sc-a9u0e1-0 fwbACG"><title id=":rp:">(Opens in new window)</title><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18 19H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h5c.55 0 1-.45 1-1s-.45-1-1-1H5a2 2 0 00-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6c0-.55-.45-1-1-1s-1 .45-1 1v5c0 .55-.45 1-1 1zM14 4c0 .55.45 1 1 1h2.59l-9.13 9.13a.996.996 0 101.41 1.41L19 6.41V9c0 .55.45 1 1 1s1-.45 1-1V4c0-.55-.45-1-1-1h-5c-.55 0-1 .45-1 1z"></path></svg></a>
+                <a style="position: absolute;right: 16px;height: 16px;" href='${link}' target="_blank" class="floating-icon"><svg fill="currentColor" aria-labelledby=":rp:" height="16" width="16" stroke="currentColor" stroke-width="0" viewBox="0 0 24 24" class="base__StyledIcon-sc-a9u0e1-0 fwbACG"><title id=":rp:">(Opens in new window)</title><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18 19H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h5c.55 0 1-.45 1-1s-.45-1-1-1H5a2 2 0 00-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6c0-.55-.45-1-1-1s-1 .45-1 1v5c0 .55-.45 1-1 1zM14 4c0 .55.45 1 1 1h2.59l-9.13 9.13a.996.996 0 101.41 1.41L19 6.41V9c0 .55.45 1 1 1s1-.45 1-1V4c0-.55-.45-1-1-1h-5c-.55 0-1 .45-1 1z"></path></svg></a>
             </div>
         `);
+        const changeStoreBtn = document.querySelector('.cp-nav-container > div > ul[role="group"]:last-child > button:last-child');
+        if (changeStoreBtn) {
+            changeStoreBtn.classList.add('cp-nav-header-link')
+            const footerContainer = document.querySelector('.cp-nav-footer');
+            footerContainer.prepend(changeStoreBtn);
+            footerContainer.style.backgroundColor = '#273a8a';
+            footerContainer.querySelector('#nav-help').style.background = 'none';
+        }
     });
 }
 if (document.querySelector('preview-bar-iframe')) {
@@ -73,7 +78,7 @@ if (scriptAutoUrl.includes(`/my-themes`)) {
                         .theme-note {
                         position: fixed;
                         bottom: 8px;
-                        right: 10px;
+                        left: 270px;
                         background: white;
                         padding: 10px 16px;
                         font-size: 16px;
@@ -98,4 +103,3 @@ if (scriptAutoUrl.includes(`/my-themes`)) {
         }
     }
 }
-document.querySelectorAll('video').forEach(video => video.pause());

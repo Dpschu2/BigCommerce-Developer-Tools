@@ -3,6 +3,10 @@ BC_themes_quick_link.js: Requires 'ScriptAutoRunner' chrome extension
       Theme page quicklink (tested on all versions of cornerstone)
       
 ![themes link](https://github.com/Dpschu2/BigCommerce-Developer-Tools/assets/22309201/ad5885c2-3fd3-4891-ac87-012cb135b322)
+
+      Moves 'Change Store' button fixed to bottom of sidebar
+
+![change store button](image.png)
       
       Removes that pesky admin bar
       
