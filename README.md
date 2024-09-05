@@ -1,3 +1,9 @@
+Installation: 
+    1. Install ScriptAutoRunner Chrome Extension
+    2. Add the following script and enable
+
+Features:
+
 BC_themes_quick_link.js: Requires 'ScriptAutoRunner' chrome extension
 
       Theme page quicklink (tested on all versions of cornerstone)
@@ -6,7 +12,7 @@ BC_themes_quick_link.js: Requires 'ScriptAutoRunner' chrome extension
 
       Moves 'Change Store' button fixed to bottom of sidebar
 
-![change store button](image.png)
+![change store button](change-store.png)
       
       Removes that pesky admin bar
       
