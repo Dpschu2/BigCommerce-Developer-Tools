@@ -6,6 +6,7 @@ BC_Dev_Customizations.js: Requires 'ScriptAutoRunner' chrome extension
             
             2. Add the following script and enable
 
+
       Theme page quicklink (tested on all versions of cornerstone)
       
 ![themes link](https://github.com/Dpschu2/BigCommerce-Developer-Tools/assets/22309201/ad5885c2-3fd3-4891-ac87-012cb135b322)
