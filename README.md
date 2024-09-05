@@ -1,10 +1,10 @@
-Installation: 
-    1. Install ScriptAutoRunner Chrome Extension
-    2. Add the following script and enable
+BC_Dev_Customizations.js: Requires 'ScriptAutoRunner' chrome extension
 
-Features:
+      Installation: 
 
-BC_themes_quick_link.js: Requires 'ScriptAutoRunner' chrome extension
+            1. Install ScriptAutoRunner Chrome Extension
+            
+            2. Add the following script and enable
 
       Theme page quicklink (tested on all versions of cornerstone)
       
@@ -24,6 +24,15 @@ BC_themes_quick_link.js: Requires 'ScriptAutoRunner' chrome extension
 
 
 debugContext.js: (local environment only)
+
+      Installation:
+
+            1. right click bookmarks bar
+
+            2. add page
+
+            3. replace url with the code in debugContext.js
+
 
       Context property quick search browser bookmark (?debug=context)
         -click once to open new window with the context data
