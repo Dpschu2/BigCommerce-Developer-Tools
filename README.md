@@ -12,7 +12,7 @@ BC_Dev_Customizations.js: Requires 'ScriptAutoRunner' chrome extension
 
       Moves 'Change Store' button fixed to bottom of sidebar
 
-![change store button](change-store.png)
+![change store button](screens/change-store.png)
       
       Removes that pesky admin bar
       
@@ -20,10 +20,10 @@ BC_Dev_Customizations.js: Requires 'ScriptAutoRunner' chrome extension
 
       Add custom note/reminder to themes page per site
 
-![themes note](theme-note.png)
+![themes note](screens/theme-note.png)
 
 
-debugContext.js: (local environment only)
+Debug_Context.js: (local environment only)
 
       Installation:
 
@@ -31,7 +31,7 @@ debugContext.js: (local environment only)
 
             2. add page
 
-            3. replace url with the code in debugContext.js
+            3. replace url with the code in Debug_Context.js
 
 
       Context property quick search browser bookmark (?debug=context)
