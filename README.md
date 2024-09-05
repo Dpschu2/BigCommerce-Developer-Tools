@@ -1,5 +1,7 @@
 Installation: 
+
     1. Install ScriptAutoRunner Chrome Extension
+    
     2. Add the following script and enable
 
 Features:
