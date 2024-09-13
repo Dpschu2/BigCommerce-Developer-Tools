@@ -51,21 +51,19 @@ if (scriptAutoUrl.includes('.mybigcommerce.com/manage')) {
                 <a style="position: absolute;right: 16px;height: 16px;" href='${link}' target="_blank" class="floating-icon"><svg fill="currentColor" aria-labelledby=":rp:" height="16" width="16" stroke="currentColor" stroke-width="0" viewBox="0 0 24 24" class="base__StyledIcon-sc-a9u0e1-0 fwbACG"><title id=":rp:">(Opens in new window)</title><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18 19H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h5c.55 0 1-.45 1-1s-.45-1-1-1H5a2 2 0 00-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6c0-.55-.45-1-1-1s-1 .45-1 1v5c0 .55-.45 1-1 1zM14 4c0 .55.45 1 1 1h2.59l-9.13 9.13a.996.996 0 101.41 1.41L19 6.41V9c0 .55.45 1 1 1s1-.45 1-1V4c0-.55-.45-1-1-1h-5c-.55 0-1 .45-1 1z"></path></svg></a>
             </div>
         `);
-        const changeStoreBtn = document.querySelector('.cp-nav-container > div > ul[role="group"]:last-child > button:last-child');
         const webPagesBtn = document.querySelector('[href="/manage/content/pages"]');
         const catsBtn = document.querySelector('[href="/manage/products/categories"]');
         const footerContainer = document.querySelector('.cp-nav-footer');
         let pageCats = document.createElement('div');
         pageCats.setAttribute('class', 'bc-side-links');
         if (footerContainer) {
-            changeStoreBtn.classList.add('cp-nav-header-link');
             webPagesBtn.classList.add('cp-nav-header-link');
             catsBtn.classList.add('cp-nav-header-link');
             pageCats.append(webPagesBtn);
             pageCats.append(catsBtn);
-            footerContainer.prepend(changeStoreBtn);
             footerContainer.prepend(pageCats);
             footerContainer.innerHTML += `
+                <button type="button" id="change-store" class="cp-nav-link cp-nav-header-link">Change Store<div class="floating-icon animate"><svg aria-hidden="true" fill="currentColor" height="24" stroke="currentColor" stroke-width="0" viewBox="0 0 24 24" width="24" class="base__StyledIcon-sc-a9u0e1-0 cwFLOb"><path d="M0 0h24v24H0z" fill="none"></path><path d="m6.14 11.86-2.78 2.79c-.19.2-.19.51 0 .71l2.78 2.79c.31.32.85.09.85-.35V16H13c.55 0 1-.45 1-1s-.45-1-1-1H6.99v-1.79c0-.45-.54-.67-.85-.35m14.51-3.21-2.78-2.79c-.31-.32-.85-.09-.85.35V8H11c-.55 0-1 .45-1 1s.45 1 1 1h6.01v1.79c0 .45.54.67.85.35l2.78-2.79c.2-.19.2-.51.01-.7"></path></svg></div></button>
                 <style>
                 .bc-side-links {
                     display: flex;
@@ -86,6 +84,11 @@ if (scriptAutoUrl.includes('.mybigcommerce.com/manage')) {
                 }
                 </style>
             `;
+            document.getElementById('change-store').addEventListener('click', function(){
+                const changeBtn = document.querySelector('.cp-nav-container > div > ul[role=\'group\']:last-child > .cp-nav-link:last-child');
+                console.log(changeBtn);
+                changeBtn.click();
+            });
             footerContainer.style.backgroundColor = '#273a8a';
             footerContainer.querySelector('#nav-help').style.background = 'none';
         }
