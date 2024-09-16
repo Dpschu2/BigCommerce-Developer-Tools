@@ -9,7 +9,7 @@ BC_Dev_Customizations.js: Requires 'ScriptAutoRunner' chrome extension
 
       Quicklinks and site note (tested on all versions of cornerstone)
       
-![quick links](https://github.com/Dpschu2/BigCommerce-Developer-Tools/assets/22309201/ad5885c2-3fd3-4891-ac87-012cb135b322)
+![Quicklinks and site note](https://github.com/Dpschu2/BigCommerce-Developer-Tools/blob/main/screens/customizations.png)
       
       Removes that pesky admin bar
       
